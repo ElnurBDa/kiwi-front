@@ -3,7 +3,7 @@ import { Box, Card,Typography, Container, Unstable_Grid2 as Grid } from '@mui/ma
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
 import { OverviewClaimsPaid } from 'src/sections/overview/overview-claims-paid';
 import { OverviewTasksProgress } from 'src/sections/overview/overview-tasks-progress';
-import { OverviewUrgentMore } from 'src/sections/overview/overview-total-customers';
+import { OverviewUrgentMore } from 'src/sections/overview/overview-urgent-more';
 import { ActivitiesCard } from 'src/sections/overview/overview-progress';
 import { Urgent } from 'src/sections/overview/overview-urgent';
 import { ChatbotInfo } from 'src/sections/overview/overview-chatbot';

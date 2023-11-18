@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
-import ArrowDownIcon from '@heroicons/react/24/solid/ArrowDownIcon';
-import ArrowUpIcon from '@heroicons/react/24/solid/ArrowUpIcon';
-import UsersIcon from '@heroicons/react/24/solid/UsersIcon';
+import LightBulbIcon from '@heroicons/react/24/solid/LightBulbIcon';
 import { Avatar, Card, CardContent, Button, Stack, SvgIcon, Typography } from '@mui/material';
 
 
@@ -35,7 +33,7 @@ export const OverviewUrgentMore = (props) => {
             }}
           >
             <SvgIcon>
-              <UsersIcon />
+              <LightBulbIcon />
             </SvgIcon>
           </Avatar>
         </Stack>

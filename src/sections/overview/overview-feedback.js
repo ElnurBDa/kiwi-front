@@ -1,14 +1,11 @@
 import PropTypes from 'prop-types';
 import { Card, CardContent, Stack, SvgIcon, Typography, Button, TextField } from '@mui/material';
-import ChatIcon from '@mui/icons-material/Chat'; // Importing ChatIcon for use
 
 export const FeedbackForm = (props) => {
   const { sx } = props;
 
-  // Function to handle feedback submission
   const handleFeedbackSubmit = () => {
     console.log("Feedback submitted");
-    // Add logic to handle feedback submission here
   };
 
   return (

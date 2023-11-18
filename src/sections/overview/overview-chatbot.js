@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import ChatIcon from '@mui/icons-material/Chat';
+import ChatBubbleOvalLeftIcon from '@heroicons/react/24/solid/ChatBubbleOvalLeftIcon';
 import { Card, CardContent, Stack, SvgIcon, Typography, Button } from '@mui/material';
 
 export const ChatbotInfo = (props) => {
@@ -16,7 +16,7 @@ export const ChatbotInfo = (props) => {
             Get instant help with your urgent ticket choices!
           </Typography>
           <Stack direction="row" spacing={1} alignItems="center">
-            <SvgIcon component={ChatIcon} />
+            <SvgIcon component={ChatBubbleOvalLeftIcon} />
             <Typography variant="subtitle1">
               Our chatbot is ready to assist you 24/7. Whether you need help choosing between the one-week or two-week urgent ticket, or have any queries about the process, just ask away!
             </Typography>

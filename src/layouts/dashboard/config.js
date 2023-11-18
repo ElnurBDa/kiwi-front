@@ -6,7 +6,7 @@ import UserIcon from '@heroicons/react/24/solid/UserIcon';
 import UserPlusIcon from '@heroicons/react/24/solid/UserPlusIcon';
 import BookOpenIcon from '@heroicons/react/24/solid/BookOpenIcon';
 import { SvgIcon } from '@mui/material';
-import ChatIcon from '@mui/icons-material/Chat';
+import ChatBubbleOvalLeftIcon from '@heroicons/react/24/solid/ChatBubbleOvalLeftIcon';
 
 export const items = [
   {
@@ -41,7 +41,7 @@ export const items = [
     path: '/chatpath',
     icon: (
       <SvgIcon fontSize="small">
-        <ChatIcon />
+        <ChatBubbleOvalLeftIcon />
       </SvgIcon>
     )
   },
