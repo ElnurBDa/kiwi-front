@@ -19,77 +19,52 @@ const companies = [
   {
     id: '00a1b2c3d4e5f67890ab1c2d',
     createdAt: '18/11/2023',
-    description: 'Baku Medical Hospital offers comprehensive medical and emergency services, with state-of-the-art facilities.',
-    logo: '/assets/logos/logo-baku-Medical-hospital.png',
-    title: 'Baku Medical Hospital',
+    description: 'An official dealer of Kia Motors, offering services related to Kia vehicles',
+    logo: '/assets/logos/Kia_Express.jpeg',
+    title: 'Kia Express',
     transactions: '1024'
   },
   {
     id: '10a2b3c4d5e6f78901ab2c3d',
     createdAt: '18/11/2023',
-    description: 'AutoFix Azerbaijan provides quality repair and maintenance services for all types of vehicles.',
-    logo: '/assets/logos/logo-autofix.png',
-    title: 'AutoFix Azerbaijan',
+    description: 'An official dealer of Mercedes-Benz cars in Azerbaijan, providing specialized services for Mercedes-Benz vehicles',
+    logo: '/assets/logos/Autocapital_Azerbaijan.jpeg',
+    title: 'Autocapital Azerbaijan',
     transactions: '867'
-  },
-  {
-    id: '20b3c4d5e6f7a8901b2c3d4e',
-    createdAt: '18/11/2023',
-    description: 'Caspian Life Insurance covers a wide range of life insurance policies to secure your family’s future.',
-    logo: '/assets/logos/logo-caspian-life.png',
-    title: 'Caspian Life Insurance',
-    transactions: '739'
   },
   {
     id: '30c4d5e6f7a8b9012c3d4e5f',
     createdAt: '18/11/2023',
-    description: 'AzerHealth Insurance offers health coverage for individuals, families, and companies with extensive care options.',
-    logo: '/assets/logos/logo-azerhealth.png',
-    title: 'AzerHealth Insurance',
+    description: 'An official car service provides all types of technical service for cars. You can use the tune of your car with the help of professional masters.',
+    logo: '/assets/logos/Changan_Auto.jpeg',
+    title: 'Changan Auto',
     transactions: '658'
-  },
-  {
-    id: '40d5e6f7a8b9c0123d4e5f6g',
-    createdAt: '18/11/2023',
-    description: 'QuickService Auto provides fast and reliable auto services and emergency roadside assistance.',
-    logo: '/assets/logos/logo-quickservice-auto.png',
-    title: 'QuickService Auto',
-    transactions: '541'
   },
   {
     id: '50e6f7a8b9c0d1234e5f6g7h',
     createdAt: '18/11/2023',
-    description: 'MediAssist Azerbaijan specializes in medical assistance and insurance for travelers and expatriates.',
-    logo: '/assets/logos/logo-mediassist.png',
-    title: 'MediAssist Azerbaijan',
+    description: 'Offers a variety of car services, catering to different tastes and requirements​',
+    logo: '/assets/logos/Auto_Import.jpeg',
+    title: 'Auto Import',
     transactions: '322'
   },
   {
     id: '60f7a8b9c0d1e2345f6g7h8i',
     createdAt: '18/11/2023',
-    description: 'Baku Vehicle Service Center offers comprehensive diagnostics and repair services for modern automobiles.',
-    logo: '/assets/logos/logo-baku-vehicle-service.png',
-    title: 'Baku Vehicle Service Center',
+    description: 'The official distributor of Audi cars, likely offering specialized services for Audi vehicles',
+    logo: '/assets/logos/Audi_Baki_Merkezi.jpeg',
+    title: 'Audi Baku Center',
     transactions: '488'
   },
   {
     id: '70a8b9c0d1e2f3456g7h8i9j',
     createdAt: '18/11/2023',
-    description: 'SecureHome Insurance provides property and liability insurance for homeowners and renters.',
-    logo: '/assets/logos/logo-securehome.png',
-    title: 'SecureHome Insurance',
+    description: 'Deals with luxury cars, particularly Aston Martin vehicles',
+    logo: '/assets/logos/Aston_Martin_Baku.jpeg',
+    title: 'Aston Martin Baku',
     transactions: '401'
-  },
-  {
-    id: '89b0c1d2e3f4567h8i9j0k1l',
-    createdAt: '18/11/2023',
-    description: 'TravelGuard Insurance offers comprehensive travel insurance packages for safe and secure journeys.',
-    logo: '/assets/logos/logo-travelguard.png',
-    title: 'TravelGuard Insurance',
-    transactions: '284'
   }
 ];
-
 
 const Page = () => (
   <>
@@ -114,7 +89,7 @@ const Page = () => (
           >
             <Stack spacing={1}>
               <Typography variant="h4">
-                Companies
+                Service Providers
               </Typography>
               <Stack
                 alignItems="center"

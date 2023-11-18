@@ -118,6 +118,16 @@ const Page = () => {
                   value={formik.values.email}
                 />
                 <TextField
+                  error={!!(formik.touched.name && formik.errors.name)}
+                  fullWidth
+                  helperText={formik.touched.name && formik.errors.name}
+                  label="Fin"
+                  name="name"
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                  value={formik.values.name}
+                />
+                <TextField
                   error={!!(formik.touched.password && formik.errors.password)}
                   fullWidth
                   helperText={formik.touched.password && formik.errors.password}

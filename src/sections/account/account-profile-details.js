@@ -13,31 +13,31 @@ import {
 
 const states = [
   {
-    value: 'alabama',
-    label: 'Alabama'
+    value: 'Baku',
+    label: 'Baku'
   },
   {
-    value: 'new-york',
-    label: 'New York'
+    value: 'Agjabadi',
+    label: 'Agjabadi'
   },
   {
-    value: 'san-francisco',
-    label: 'San Francisco'
+    value: 'Siyazan',
+    label: 'Siyazan'
   },
   {
-    value: 'los-angeles',
-    label: 'Los Angeles'
+    value: 'Shirvan',
+    label: 'Shirvan'
   }
 ];
 
 export const AccountProfileDetails = () => {
   const [values, setValues] = useState({
-    firstName: 'Anika',
-    lastName: 'Visser',
+    firstName: 'Elmir',
+    lastName: 'Hajizadeh',
     email: 'demo@Kiwi.io',
-    phone: '',
-    state: 'los-angeles',
-    country: 'USA'
+    phone: '+994 55 555 55 55',
+    state: 'Siyazan',
+    fin: 'XX11XXX'
   });
 
   const handleChange = useCallback(
@@ -110,7 +110,6 @@ export const AccountProfileDetails = () => {
                   label="Email Address"
                   name="email"
                   onChange={handleChange}
-                  required
                   value={values.email}
                 />
               </Grid>
@@ -123,7 +122,7 @@ export const AccountProfileDetails = () => {
                   label="Phone Number"
                   name="phone"
                   onChange={handleChange}
-                  type="number"
+                  required
                   value={values.phone}
                 />
               </Grid>
@@ -133,11 +132,11 @@ export const AccountProfileDetails = () => {
               >
                 <TextField
                   fullWidth
-                  label="Country"
-                  name="country"
+                  label="FIN code"
+                  name="FINcode"
                   onChange={handleChange}
                   required
-                  value={values.country}
+                  value={values.fin}
                 />
               </Grid>
               <Grid

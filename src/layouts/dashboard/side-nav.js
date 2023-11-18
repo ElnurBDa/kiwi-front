@@ -42,52 +42,14 @@ export const SideNav = (props) => {
           height: '100%'
         }}
       >
-        <Box sx={{ p: 3 }}>
-          <Box
-            component={NextLink}
-            href="/"
-            sx={{
-              display: 'inline-flex',
-              height: 32,
-              width: 32
-            }}
-          >
-            <Logo />
-          </Box>
-          <Box
-            sx={{
-              alignItems: 'center',
-              backgroundColor: 'rgba(255, 255, 255, 0.04)',
-              borderRadius: 1,
-              cursor: 'pointer',
-              display: 'flex',
-              justifyContent: 'space-between',
-              mt: 2,
-              p: '12px'
-            }}
-          >
-            <div>
-              <Typography
-                color="inherit"
-                variant="subtitle1"
-              >
-                Kiwi
-              </Typography>
-              <Typography
-                color="neutral.400"
-                variant="body2"
-              >
-                Production
-              </Typography>
-            </div>
-            <SvgIcon
-              fontSize="small"
-              sx={{ color: 'neutral.500' }}
-            >
-              <ChevronUpDownIcon />
-            </SvgIcon>
-          </Box>
+      <Box sx={{ p: 3, display: 'flex', alignItems: 'center' }}>
+        <Box sx={{ display: 'inline-flex', height: 48, width: 48 }}>
+          <Logo />         
         </Box>
+        <Typography color="inherit" variant="h3" sx={{ marginLeft: 2 }}>
+          Kiwi
+        </Typography>
+      </Box>
         <Divider sx={{ borderColor: 'neutral.700' }} />
         <Box
           component="nav"

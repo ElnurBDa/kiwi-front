@@ -1,286 +1,149 @@
-import { useCallback, useMemo, useState } from 'react';
-import Head from 'next/head';
-import { subDays, subHours } from 'date-fns';
-import ArrowDownOnSquareIcon from '@heroicons/react/24/solid/ArrowDownOnSquareIcon';
-import ArrowUpOnSquareIcon from '@heroicons/react/24/solid/ArrowUpOnSquareIcon';
-import PlusIcon from '@heroicons/react/24/solid/PlusIcon';
-import { Box, Button, Container, Stack, SvgIcon, Typography } from '@mui/material';
-import { useSelection } from 'src/hooks/use-selection';
+import * as React from 'react';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
-import { CustomersTable } from 'src/sections/customer/customers-table';
-import { CustomersSearch } from 'src/sections/customer/customers-search';
-import { applyPagination } from 'src/utils/apply-pagination';
+import Box from '@mui/material/Box';
 
-const now = new Date();
+import Container from '@mui/material/Container';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import Head from 'next/head';
+import Card from '@mui/material/Card';
 
-const data = [
-  {
-    id: '5e887ac47eed253091be10cb',
-    address: {
-      city: 'Cleveland',
-      country: 'USA',
-      state: 'Ohio',
-      street: '2849 Fulton Street'
-    },
-    avatar: '/assets/avatars/avatar-carson-darrin.png',
-    createdAt: subDays(subHours(now, 7), 1).getTime(),
-    email: 'carson.darrin@Kiwi.io',
-    name: 'Carson Darrin',
-    phone: '304-428-3097'
-  },
-  {
-    id: '5e887b209c28ac3dd97f6db5',
-    address: {
-      city: 'Atlanta',
-      country: 'USA',
-      state: 'Georgia',
-      street: '1865  Pleasant Hill Road'
-    },
-    avatar: '/assets/avatars/avatar-fran-perez.png',
-    createdAt: subDays(subHours(now, 1), 2).getTime(),
-    email: 'fran.perez@Kiwi.io',
-    name: 'Fran Perez',
-    phone: '712-351-5711'
-  },
-  {
-    id: '5e887b7602bdbc4dbb234b27',
-    address: {
-      city: 'North Canton',
-      country: 'USA',
-      state: 'Ohio',
-      street: '4894  Lakeland Park Drive'
-    },
-    avatar: '/assets/avatars/avatar-jie-yan-song.png',
-    createdAt: subDays(subHours(now, 4), 2).getTime(),
-    email: 'jie.yan.song@Kiwi.io',
-    name: 'Jie Yan Song',
-    phone: '770-635-2682'
-  },
-  {
-    id: '5e86809283e28b96d2d38537',
-    address: {
-      city: 'Madrid',
-      country: 'Spain',
-      name: 'Anika Visser',
-      street: '4158  Hedge Street'
-    },
-    avatar: '/assets/avatars/avatar-anika-visser.png',
-    createdAt: subDays(subHours(now, 11), 2).getTime(),
-    email: 'anika.visser@Kiwi.io',
-    name: 'Anika Visser',
-    phone: '908-691-3242'
-  },
-  {
-    id: '5e86805e2bafd54f66cc95c3',
-    address: {
-      city: 'San Diego',
-      country: 'USA',
-      state: 'California',
-      street: '75247'
-    },
-    avatar: '/assets/avatars/avatar-miron-vitold.png',
-    createdAt: subDays(subHours(now, 7), 3).getTime(),
-    email: 'miron.vitold@Kiwi.io',
-    name: 'Miron Vitold',
-    phone: '972-333-4106'
-  },
-  {
-    id: '5e887a1fbefd7938eea9c981',
-    address: {
-      city: 'Berkeley',
-      country: 'USA',
-      state: 'California',
-      street: '317 Angus Road'
-    },
-    avatar: '/assets/avatars/avatar-penjani-inyene.png',
-    createdAt: subDays(subHours(now, 5), 4).getTime(),
-    email: 'penjani.inyene@Kiwi.io',
-    name: 'Penjani Inyene',
-    phone: '858-602-3409'
-  },
-  {
-    id: '5e887d0b3d090c1b8f162003',
-    address: {
-      city: 'Carson City',
-      country: 'USA',
-      state: 'Nevada',
-      street: '2188  Armbrester Drive'
-    },
-    avatar: '/assets/avatars/avatar-omar-darboe.png',
-    createdAt: subDays(subHours(now, 15), 4).getTime(),
-    email: 'omar.darobe@Kiwi.io',
-    name: 'Omar Darobe',
-    phone: '415-907-2647'
-  },
-  {
-    id: '5e88792be2d4cfb4bf0971d9',
-    address: {
-      city: 'Los Angeles',
-      country: 'USA',
-      state: 'California',
-      street: '1798  Hickory Ridge Drive'
-    },
-    avatar: '/assets/avatars/avatar-siegbert-gottfried.png',
-    createdAt: subDays(subHours(now, 2), 5).getTime(),
-    email: 'siegbert.gottfried@Kiwi.io',
-    name: 'Siegbert Gottfried',
-    phone: '702-661-1654'
-  },
-  {
-    id: '5e8877da9a65442b11551975',
-    address: {
-      city: 'Murray',
-      country: 'USA',
-      state: 'Utah',
-      street: '3934  Wildrose Lane'
-    },
-    avatar: '/assets/avatars/avatar-iulia-albu.png',
-    createdAt: subDays(subHours(now, 8), 6).getTime(),
-    email: 'iulia.albu@Kiwi.io',
-    name: 'Iulia Albu',
-    phone: '313-812-8947'
-  },
-  {
-    id: '5e8680e60cba5019c5ca6fda',
-    address: {
-      city: 'Salt Lake City',
-      country: 'USA',
-      state: 'Utah',
-      street: '368 Lamberts Branch Road'
-    },
-    avatar: '/assets/avatars/avatar-nasimiyu-danai.png',
-    createdAt: subDays(subHours(now, 1), 9).getTime(),
-    email: 'nasimiyu.danai@Kiwi.io',
-    name: 'Nasimiyu Danai',
-    phone: '801-301-7894'
-  }
+const TextBox = () => (
+  <Card
+    sx={{
+      p: 2,
+      borderRadius: '4px',
+      marginBottom: '20px',
+    }}
+  >
+  
+    <p>The full car insurance in PASHA Insurance includes 3 sections:</p>
+    <ul>
+      <li>Section 1: Damage or destruction of vehicles (Casco)</li>
+      <li>Section 2: Third-party liability</li>
+      <li>Section 3: Driver and Passengers Personal Accident insurance</li>
+    </ul>
+    <p>Our customers have an option to choose one of the above mentioned sections separately.</p>
+
+    <p>Section 1. Damage or destruction of vehicles (CASCO):</p>
+    <ul>
+      <li>Traffic accident</li>
+      <li>Dropped or falling objects</li>
+      <li>Illegal actions of the third party</li>
+      <li>Theft</li>
+      <li>Fire and explosion</li>
+      <li>Animals actions</li>
+      <li>Natural disasters</li>
+    </ul>
+    <p>Section 2: Third-party liability. This section covers paying material damage and compensation for body injuries caused to third parties as a result of an insured event.</p>
+    <p>Section 3: Driver and Passengers Personal Accident insurance.</p>
+    <p>Insurance coverage for section 3 covers the risks of death, total and/or partial disability and injuries to insured persons.</p>
+  </Card>
+);
+
+function createData(service, free, standard, premium, pashaLadies) {
+  return { service, free, standard, premium, pashaLadies };
+}
+
+const rows = [
+  createData('Taxi service (1)', '-', '-', '14 days', '14 days'),
+  createData('Evacuation service (2)', '-', '2 times', '3 times', '2 times'),
+  createData('Being exempt from paying the deductible if the insured/policyholder are not at fault in road traffic accident (3)', '+', '+', '+', '+'),
+  createData('Partial payment based on the value of the car', '+', '+', '+', '+'),
+  createData('Partial payment up to 10 months regardless of the value of the car', '-', '-', '+', '-'),
+  createData('Discounts for other types of insurance products', '+', '+', '+', '+'),
+  createData('Any driver (4)', '+', '+', '+', '+')
 ];
 
-const useCustomers = (page, rowsPerPage) => {
-  return useMemo(
-    () => {
-      return applyPagination(data, page, rowsPerPage);
-    },
-    [page, rowsPerPage]
+function BasicTable() {
+  return (
+    <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell>Additional services and benefits</TableCell>
+            <TableCell align="right">Free</TableCell>
+            <TableCell align="right">Standard</TableCell>
+            <TableCell align="right">Premium</TableCell>
+            <TableCell align="right">PASHA Ladies</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow
+              key={row.service}
+              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+            >
+              <TableCell component="th" scope="row">
+                {row.service}
+              </TableCell>
+              <TableCell align="right">{row.free}</TableCell>
+              <TableCell align="right">{row.standard}</TableCell>
+              <TableCell align="right">{row.premium}</TableCell>
+              <TableCell align="right">{row.pashaLadies}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
-};
+}
 
-const useCustomerIds = (customers) => {
-  return useMemo(
-    () => {
-      return customers.map((customer) => customer.id);
-    },
-    [customers]
-  );
-};
+
+const TextBox2 = () => (
+  <Card
+    sx={{
+      p: 2,
+      borderRadius: '4px',
+      marginBottom: '20px',
+    }}
+  >
+    <p>(1) The service is available for 14 days with daily limit of 20 AZN. Free taxi rides provided while the car is being repaired in a service station, will be suspended after the repairment. If the value of the damage to the insured car is paid to the beneficiary, after a damage assessment, taxi service will be suspended. Please, call +994502508383 or *0007 to use this service. Taxi service is only available in Baku-Absheron-Khirdalan-Sumgayit. </p>
+    <p>(2) Free evacuation of the insured vehicle is provided to the nearest auto service in case of the car breakdown. Free evacuation is applied in case of the impossibility of the car to move for any reasons, and only available in Baku-Absheron, Khirdalan, Sumgait (transportation to the nearest service station). If the cause of car breakdown is not an insurance accident, please call +994502508383 or *0007.</p>
+    <p>(3) Deductible is not applied to the loss if insured/policyholder are not at fault in road traffic accident. If the third party involved in the traffic accident cannot be identified, deductible is applied.</p>
+    <p>(4) Damage caused by any driver who has the right to drive the car on a legal basis is covered by insurance.</p> <br></br>
+    <p>PASHA Ladies package is only applicable to female drivers.</p><br></br>
+    <p>Please, note that the benefits will be provided to you as shown on the website.</p>
+   </Card>
+);
+
 
 const Page = () => {
-  const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(5);
-  const customers = useCustomers(page, rowsPerPage);
-  const customersIds = useCustomerIds(customers);
-  const customersSelection = useSelection(customersIds);
-
-  const handlePageChange = useCallback(
-    (event, value) => {
-      setPage(value);
-    },
-    []
-  );
-
-  const handleRowsPerPageChange = useCallback(
-    (event) => {
-      setRowsPerPage(event.target.value);
-    },
-    []
-  );
-
   return (
     <>
-      <Head>
-        <title>
-        Claims & Policies | Kiwi
-        </title>
-      </Head>
-      <Box
-        component="main"
-        sx={{
-          flexGrow: 1,
-          py: 8
-        }}
-      >
-        <Container maxWidth="xl">
-          <Stack spacing={3}>
-            <Stack
-              direction="row"
-              justifyContent="space-between"
-              spacing={4}
-            >
-              <Stack spacing={1}>
-                <Typography variant="h4">
-                  Customers
-                </Typography>
-                <Stack
-                  alignItems="center"
-                  direction="row"
-                  spacing={1}
-                >
-                  <Button
-                    color="inherit"
-                    startIcon={(
-                      <SvgIcon fontSize="small">
-                        <ArrowUpOnSquareIcon />
-                      </SvgIcon>
-                    )}
-                  >
-                    Import
-                  </Button>
-                  <Button
-                    color="inherit"
-                    startIcon={(
-                      <SvgIcon fontSize="small">
-                        <ArrowDownOnSquareIcon />
-                      </SvgIcon>
-                    )}
-                  >
-                    Export
-                  </Button>
-                </Stack>
-              </Stack>
-              <div>
-                <Button
-                  startIcon={(
-                    <SvgIcon fontSize="small">
-                      <PlusIcon />
-                    </SvgIcon>
-                  )}
-                  variant="contained"
-                >
-                  Add
-                </Button>
-              </div>
-            </Stack>
-            <CustomersSearch />
-            <CustomersTable
-              count={data.length}
-              items={customers}
-              onDeselectAll={customersSelection.handleDeselectAll}
-              onDeselectOne={customersSelection.handleDeselectOne}
-              onPageChange={handlePageChange}
-              onRowsPerPageChange={handleRowsPerPageChange}
-              onSelectAll={customersSelection.handleSelectAll}
-              onSelectOne={customersSelection.handleSelectOne}
-              page={page}
-              rowsPerPage={rowsPerPage}
-              selected={customersSelection.selected}
-            />
-          </Stack>
-        </Container>
-      </Box>
+    <Head>
+      <title>
+      Claims & Policies | Kiwi
+      </title>
+    </Head>
+    <Box
+      component="main"
+      sx={{
+        flexGrow: 1,
+        py: 8
+      }}
+    >
+      <Container maxWidth="lg">
+        <Stack spacing={3}>
+          <Typography variant="h4">
+            Claims & Policies
+          </Typography>
+          <TextBox />
+          <BasicTable />
+          <TextBox2 />
+        </Stack>
+      </Container>
+    </Box>
     </>
   );
 };
-
 Page.getLayout = (page) => (
   <DashboardLayout>
     {page}

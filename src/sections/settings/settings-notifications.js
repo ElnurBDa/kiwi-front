@@ -24,10 +24,7 @@ export const SettingsNotifications = () => {
   return (
     <form onSubmit={handleSubmit}>
       <Card>
-        <CardHeader
-          subheader="Manage the notifications"
-          title="Notifications"
-        />
+
         <Divider />
         <CardContent>
           <Grid
