@@ -1,12 +1,12 @@
 import ChartBarIcon from '@heroicons/react/24/solid/ChartBarIcon';
 import CogIcon from '@heroicons/react/24/solid/CogIcon';
 import LockClosedIcon from '@heroicons/react/24/solid/LockClosedIcon';
-import ShoppingBagIcon from '@heroicons/react/24/solid/ShoppingBagIcon';
+import TruckIcon from '@heroicons/react/24/solid/TruckIcon';
 import UserIcon from '@heroicons/react/24/solid/UserIcon';
 import UserPlusIcon from '@heroicons/react/24/solid/UserPlusIcon';
-import UsersIcon from '@heroicons/react/24/solid/UsersIcon';
-import XCircleIcon from '@heroicons/react/24/solid/XCircleIcon';
+import BookOpenIcon from '@heroicons/react/24/solid/BookOpenIcon';
 import { SvgIcon } from '@mui/material';
+import ChatIcon from '@mui/icons-material/Chat';
 
 export const items = [
   {
@@ -23,7 +23,7 @@ export const items = [
     path: '/customers',
     icon: (
       <SvgIcon fontSize="small">
-        <UsersIcon />
+        <BookOpenIcon />
       </SvgIcon>
     )
   },
@@ -32,7 +32,16 @@ export const items = [
     path: '/companies',
     icon: (
       <SvgIcon fontSize="small">
-        <ShoppingBagIcon />
+        <TruckIcon />
+      </SvgIcon>
+    )
+  },
+  {
+    title: 'Chatbot Assistant',
+    path: '/chatpath',
+    icon: (
+      <SvgIcon fontSize="small">
+        <ChatIcon />
       </SvgIcon>
     )
   },

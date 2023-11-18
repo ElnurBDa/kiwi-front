@@ -59,7 +59,7 @@ export const Layout = (props) => {
           lg={6}
           sx={{
             alignItems: 'center',
-            background: 'radial-gradient(50% 50% at 50% 50%, #122647 0%, #090E23 100%)',
+            backgroundImage: 'url(/assets/kiwi2.jpg)',
             color: 'white',
             display: 'flex',
             justifyContent: 'center',
@@ -73,32 +73,29 @@ export const Layout = (props) => {
               align="center"
               color="inherit"
               sx={{
-                fontSize: '24px',
+                fontSize: '64',
                 lineHeight: '32px',
                 mb: 1
               }}
               variant="h1"
             >
-              Welcome to{' '}
-              <Box
+              Welcome to{' '}Kiwi
+              {/* <Box
                 component="a"
                 sx={{ color: '#15B79E' }}
                 target="_blank"
               >
                 Kiwi
-              </Box>
+              </Box> */}
             </Typography>
             <Typography
               align="center"
               sx={{ mb: 3 }}
-              variant="subtitle1"
+              variant="h5"
             >
-              A professional kit that comes with ready-to-use MUI components.
+              Track your claims, chat with our chatbot assistant, and more!
             </Typography>
-            <img
-              alt=""
-              src="/assets/auth-illustration.svg"
-            />
+
           </Box>
         </Grid>
       </Grid>

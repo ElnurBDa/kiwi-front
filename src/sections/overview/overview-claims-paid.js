@@ -21,7 +21,7 @@ export const OverviewClaimsPaid = (props) => {
               color="text.secondary"
               variant="overline"
             >
-              Claims Paid
+              Payout
             </Typography>
             <Typography variant="h4">
               {value}
@@ -61,7 +61,7 @@ export const OverviewClaimsPaid = (props) => {
                 color={positive ? 'success.main' : 'error.main'}
                 variant="body2"
               >
-                ${difference}k
+                {difference}k₼
               </Typography>
             </Stack>
             <Typography

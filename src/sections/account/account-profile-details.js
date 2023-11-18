@@ -109,6 +109,7 @@ export const AccountProfileDetails = () => {
                   fullWidth
                   label="Email Address"
                   name="email"
+                  required
                   onChange={handleChange}
                   value={values.email}
                 />
@@ -122,7 +123,6 @@ export const AccountProfileDetails = () => {
                   label="Phone Number"
                   name="phone"
                   onChange={handleChange}
-                  required
                   value={values.phone}
                 />
               </Grid>

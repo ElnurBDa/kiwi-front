@@ -2,11 +2,16 @@ import PropTypes from 'prop-types';
 import ArrowDownIcon from '@heroicons/react/24/solid/ArrowDownIcon';
 import ArrowUpIcon from '@heroicons/react/24/solid/ArrowUpIcon';
 import UsersIcon from '@heroicons/react/24/solid/UsersIcon';
-import { Avatar, Card, CardContent, Stack, SvgIcon, Typography } from '@mui/material';
+import { Avatar, Card, CardContent, Button, Stack, SvgIcon, Typography } from '@mui/material';
 
-export const OverviewTotalCustomers = (props) => {
+
+export const OverviewUrgentMore = (props) => {
   const { difference, positive = false, sx, value } = props;
 
+  const focusOnElement = (id) => {
+    const element = document.getElementById(id);
+    element.scrollIntoView({behavior: "smooth"});
+  }
   return (
     <Card sx={sx}>
       <CardContent>
@@ -14,15 +19,10 @@ export const OverviewTotalCustomers = (props) => {
           alignItems="flex-start"
           direction="row"
           justifyContent="space-between"
-          spacing={3}
+          spacing={'Urgent'}
         >
           <Stack spacing={1}>
-            <Typography
-              color="text.secondary"
-              variant="overline"
-            >
-              Bonus?
-            </Typography>
+            
             <Typography variant="h4">
               {value}
             </Typography>
@@ -39,45 +39,20 @@ export const OverviewTotalCustomers = (props) => {
             </SvgIcon>
           </Avatar>
         </Stack>
-        {difference && (
-          <Stack
-            alignItems="center"
-            direction="row"
-            spacing={2}
-            sx={{ mt: 2 }}
-          >
-            <Stack
-              alignItems="center"
-              direction="row"
-              spacing={0.5}
-            >
-              <SvgIcon
-                color={positive ? 'success' : 'error'}
-                fontSize="small"
-              >
-                {positive ? <ArrowUpIcon /> : <ArrowDownIcon />}
-              </SvgIcon>
-              <Typography
-                color={positive ? 'success.main' : 'error.main'}
-                variant="body2"
-              >
-                {difference}%
-              </Typography>
-            </Stack>
-            <Typography
-              color="text.secondary"
-              variant="caption"
-            >
-              Since last month
-            </Typography>
-          </Stack>
-        )}
+        <Button variant="contained"
+onClick={() => focusOnElement('urgentX')}
+            sx={{
+              backgroundColor: 'success.main',
+              marginTop: '15px',
+            }}>
+          Learn More!
+        </Button>
       </CardContent>
     </Card>
   );
 };
 
-OverviewTotalCustomers.propTypes = {
+OverviewUrgentMore.propTypes = {
   difference: PropTypes.number,
   positive: PropTypes.bool,
   value: PropTypes.string.isRequired,
