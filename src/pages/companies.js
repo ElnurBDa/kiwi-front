@@ -15,57 +15,81 @@ import {
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
 import { CompanyCard } from 'src/sections/companies/company-card';
 import { CompaniesSearch } from 'src/sections/companies/companies-search';
-
 const companies = [
   {
-    id: '2569ce0d517a7f06d3ea1f24',
-    createdAt: '27/03/2019',
-    description: 'Dropbox is a file hosting service that offers cloud storage, file synchronization, a personal cloud.',
-    logo: '/assets/logos/logo-dropbox.png',
-    title: 'Dropbox',
-    downloads: '594'
+    id: '00a1b2c3d4e5f67890ab1c2d',
+    createdAt: '18/11/2023',
+    description: 'Baku Medical Hospital offers comprehensive medical and emergency services, with state-of-the-art facilities.',
+    logo: '/assets/logos/logo-baku-Medical-hospital.png',
+    title: 'Baku Medical Hospital',
+    transactions: '1024'
   },
   {
-    id: 'ed2b900870ceba72d203ec15',
-    createdAt: '31/03/2019',
-    description: 'Medium is an online publishing platform developed by Evan Williams, and launched in August 2012.',
-    logo: '/assets/logos/logo-medium.png',
-    title: 'Medium Corporation',
-    downloads: '625'
+    id: '10a2b3c4d5e6f78901ab2c3d',
+    createdAt: '18/11/2023',
+    description: 'AutoFix Azerbaijan provides quality repair and maintenance services for all types of vehicles.',
+    logo: '/assets/logos/logo-autofix.png',
+    title: 'AutoFix Azerbaijan',
+    transactions: '867'
   },
   {
-    id: 'a033e38768c82fca90df3db7',
-    createdAt: '03/04/2019',
-    description: 'Slack is a cloud-based set of team collaboration tools and services, founded by Stewart Butterfield.',
-    logo: '/assets/logos/logo-slack.png',
-    title: 'Slack',
-    downloads: '857'
+    id: '20b3c4d5e6f7a8901b2c3d4e',
+    createdAt: '18/11/2023',
+    description: 'Caspian Life Insurance covers a wide range of life insurance policies to secure your family’s future.',
+    logo: '/assets/logos/logo-caspian-life.png',
+    title: 'Caspian Life Insurance',
+    transactions: '739'
   },
   {
-    id: '1efecb2bf6a51def9869ab0f',
-    createdAt: '04/04/2019',
-    description: 'Lyft is an on-demand transportation company based in San Francisco, California.',
-    logo: '/assets/logos/logo-lyft.png',
-    title: 'Lyft',
-    downloads: '406'
+    id: '30c4d5e6f7a8b9012c3d4e5f',
+    createdAt: '18/11/2023',
+    description: 'AzerHealth Insurance offers health coverage for individuals, families, and companies with extensive care options.',
+    logo: '/assets/logos/logo-azerhealth.png',
+    title: 'AzerHealth Insurance',
+    transactions: '658'
   },
   {
-    id: '1ed68149f65fbc6089b5fd07',
-    createdAt: '04/04/2019',
-    description: 'GitHub is a web-based hosting service for version control of code using Git.',
-    logo: '/assets/logos/logo-github.png',
-    title: 'GitHub',
-    downloads: '835'
+    id: '40d5e6f7a8b9c0123d4e5f6g',
+    createdAt: '18/11/2023',
+    description: 'QuickService Auto provides fast and reliable auto services and emergency roadside assistance.',
+    logo: '/assets/logos/logo-quickservice-auto.png',
+    title: 'QuickService Auto',
+    transactions: '541'
   },
   {
-    id: '5dab321376eff6177407e887',
-    createdAt: '04/04/2019',
-    description: 'Squarespace provides software as a service for website building and hosting. Headquartered in NYC.',
-    logo: '/assets/logos/logo-squarespace.png',
-    title: 'Squarespace',
-    downloads: '835'
+    id: '50e6f7a8b9c0d1234e5f6g7h',
+    createdAt: '18/11/2023',
+    description: 'MediAssist Azerbaijan specializes in medical assistance and insurance for travelers and expatriates.',
+    logo: '/assets/logos/logo-mediassist.png',
+    title: 'MediAssist Azerbaijan',
+    transactions: '322'
+  },
+  {
+    id: '60f7a8b9c0d1e2345f6g7h8i',
+    createdAt: '18/11/2023',
+    description: 'Baku Vehicle Service Center offers comprehensive diagnostics and repair services for modern automobiles.',
+    logo: '/assets/logos/logo-baku-vehicle-service.png',
+    title: 'Baku Vehicle Service Center',
+    transactions: '488'
+  },
+  {
+    id: '70a8b9c0d1e2f3456g7h8i9j',
+    createdAt: '18/11/2023',
+    description: 'SecureHome Insurance provides property and liability insurance for homeowners and renters.',
+    logo: '/assets/logos/logo-securehome.png',
+    title: 'SecureHome Insurance',
+    transactions: '401'
+  },
+  {
+    id: '89b0c1d2e3f4567h8i9j0k1l',
+    createdAt: '18/11/2023',
+    description: 'TravelGuard Insurance offers comprehensive travel insurance packages for safe and secure journeys.',
+    logo: '/assets/logos/logo-travelguard.png',
+    title: 'TravelGuard Insurance',
+    transactions: '284'
   }
 ];
+
 
 const Page = () => (
   <>
@@ -97,40 +121,10 @@ const Page = () => (
                 direction="row"
                 spacing={1}
               >
-                <Button
-                  color="inherit"
-                  startIcon={(
-                    <SvgIcon fontSize="small">
-                      <ArrowUpOnSquareIcon />
-                    </SvgIcon>
-                  )}
-                >
-                  Import
-                </Button>
-                <Button
-                  color="inherit"
-                  startIcon={(
-                    <SvgIcon fontSize="small">
-                      <ArrowDownOnSquareIcon />
-                    </SvgIcon>
-                  )}
-                >
-                  Export
-                </Button>
+                
               </Stack>
             </Stack>
-            <div>
-              <Button
-                startIcon={(
-                  <SvgIcon fontSize="small">
-                    <PlusIcon />
-                  </SvgIcon>
-                )}
-                variant="contained"
-              >
-                Add
-              </Button>
-            </div>
+            
           </Stack>
           <CompaniesSearch />
           <Grid
