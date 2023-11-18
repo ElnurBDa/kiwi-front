@@ -1,8 +1,7 @@
 {
   "name": "kiwi",
-  "version": "3.0.0",
+  "version": "1.0.0",
   "author": "Kiwi",
-  "homepage": "https://Kiwi.io",
   "private": false,
   "scripts": {
     "dev": "next",
