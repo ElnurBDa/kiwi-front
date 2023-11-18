@@ -20,7 +20,7 @@ export const items = [
   },
   {
     title: 'Claims & Policies',
-    path: '/customers',
+    path: '/policies',
     icon: (
       <SvgIcon fontSize="small">
         <BookOpenIcon />
