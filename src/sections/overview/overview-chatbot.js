@@ -21,7 +21,7 @@ export const ChatbotInfo = (props) => {
               Our chatbot is ready to assist you 24/7. Whether you need help choosing between the one-week or two-week urgent ticket, or have any queries about the process, just ask away!
             </Typography>
             <Button variant="contained"
-              onClick={() => window.open('/chatpath')}
+              onClick={() => window.open('http://127.0.0.1:5173/')}
                 sx={{
                   backgroundColor: 'success.main',
                   marginTop: '15px',

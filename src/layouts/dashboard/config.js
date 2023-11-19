@@ -38,7 +38,7 @@ export const items = [
   },
   {
     title: 'Chatbot Assistant',
-    path: '/chatpath',
+    path: 'http://127.0.0.1:5173/',
     icon: (
       <SvgIcon fontSize="small">
         <ChatBubbleOvalLeftIcon />
